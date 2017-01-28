@@ -467,7 +467,7 @@ header {
     display: block;
     height: 700px;
     margin-top: -$navSize;
-    background: url('https://d3ui957tjb5bqd.cloudfront.net/images/screenshots/products/15/153/153200/d9uqetwwkkochtkgueiv8b5rp6aj9lsodpzs1trqsrcd7otsgrzigkhfsiixh7wd-o.jpg') no-repeat fixed center center;
+    background: url('../images/misocover.jpg') no-repeat fixed center bottom;
     background-size: cover;
 
     &.small {
@@ -500,6 +500,7 @@ header {
 
     .hero-buttons {
         z-index: 2;
+        text-align: center;
 
         .button {
             font-size: $fontSize;
@@ -577,6 +578,7 @@ header {
                     font-size: 4.25*$fontSize;
                     font-weight: $fontLight;
                     color: $headerColor;
+                    text-align: center;
 
                     @media screen and (max-width: $grid-md) {
                         font-size: 3.25*$fontSize;
@@ -602,6 +604,7 @@ header {
                     letter-spacing: 1px;
                     margin-top: $padding;
                     color: $textColor;
+                    text-align: center;
 
                     @media screen and (max-width: $grid-md) {
                         font-size: 1.25*$fontSize;
@@ -630,6 +633,7 @@ header {
                 	line-height: 1;
                 	width: auto;
                 	height: auto;
+
                 	&.slide {
                 		&.down {
                 			.item {
@@ -666,12 +670,14 @@ header {
 
                 			.looper-inner {
                 				height: 100%;
+                                text-align: center;
                 			}
 
                 			&.xfade .item {
                 				@include transition(0.5s ease-in-out top, 0.5s ease-in opacity);
                 			}
                 		}
+
                 		.item {
                 			@include transition(0.5s ease-in-out left);
 
@@ -709,67 +715,6 @@ header {
                 				}
                 			}
                 		}
-
-                		&.up {
-                			.looper-inner {
-                				height: 100%;
-                			}
-
-                			.item {
-                				@include transition(0.5s ease-in-out top);
-
-                                &.next {
-                					left: 0;
-                					top: 100%;
-                				}
-
-                                &.prev {
-                					left: 0;
-                					top: -100%;
-                				}
-
-                                &.go {
-                					top: 0;
-                					&.active {
-                						top: -100%;
-                						left: 0;
-                						&.prev {
-                							top: 100%;
-                						}
-                					}
-                				}
-                			}
-
-                            &.xfade .item {
-                				@include transition(0.5s ease-in-out top, 0.5s ease-in opacity);
-                			}
-                		}
-
-                        &.xfade .item {
-                            @include transition(0.5s ease-in-out left, 0.5s ease-in opacity);
-                		}
-
-                		&.right .item {
-                			&.next {
-                				left: -100%;
-                			}
-
-                			&.prev {
-                				left: 100%;
-                			}
-
-                			&.go {
-                				left: 0;
-
-                				&.active {
-                					left: 100%;
-
-                					&.prev {
-                						left: -100%;
-                					}
-                				}
-                			}
-                		}
                 	}
 
                 	&:focus {
@@ -788,12 +733,16 @@ header {
                 		display: none;
                 		position: relative;
                 		z-index: 3;
+                        @include transition(0.5s ease-in-out background);
 
                 		&.active {
-                			display: block;
+                			display: inline-block;
                 			top: 0;
                 			left: 0;
                 			z-index: 4;
+                            padding: 0 1.5*$padding;
+                            background: $overlayColor;
+                            @include transition(0.5s ease-in-out background);
                 		}
 
                 		&.next {
@@ -1130,7 +1079,7 @@ footer {
 				display: block;
 				color: $textColorLight;
 				padding: .5*$padding $padding;
-                
+
 				&:hover {
 					color: $primaryColor;
 				}
