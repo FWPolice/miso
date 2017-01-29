@@ -132,6 +132,10 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+h2, h3, h4 {
+    font-style: italic;
+}
+
 h5, h6 {
 	font-family: $fontPrimary;
 }
@@ -221,6 +225,18 @@ figure {
     width: 143px;
     margin: 2*$padding auto $padding;
     @include linear-gradient(to right,rgba(0,0,0,0) 13%,rgba(0,0,0,0.3) 50%,rgba(0,0,0,0) 87%);
+}
+
+.short-hr {
+    margin: 1.5*$padding 0;
+
+    span {
+        display: block;
+        width: 10%;
+        max-width: 100px;
+        height: 1px;
+        background-color: rgba(0,0,0,0.75);
+    }
 }
 
 /** Forms **/
@@ -1168,79 +1184,71 @@ section {
 /** Team **/
 
 .team {
-    margin-bottom: 30px;
-}
+    border: 1px solid $borderColor;
+    margin: $padding 0;
+    @include transition(all .5s ease 0s);
 
-.team figure {
-    display: block;
-    height: 180px;
-    margin: 0;
-    overflow: hidden;
-    position: relative;
-}
-
-    .team figure img {
+    figure {
         display: block;
-        width: 100%;
+        height: 200px;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        position: relative;
+        border: none;
+        border-bottom: 1px solid $borderColor;
 
-        -webkit-transition: all .5s ease 0s;
-        -moz-transition: all .5s ease 0s;
-        -ms-transition: all .5s ease 0s;
-        -o-transition: all .5s ease 0s;
-        transition: all .5s ease 0s;
+        img {
+            display: block;
+            width: 100%;
+            @include transition(all .5s ease 0s);
+        }
     }
 
-.team .caption {
-    padding: 15px 0;
-}
+    .caption {
+        padding: $padding;
 
-.team .caption h2,
-.team .caption h3,
-.team .caption p {
-    margin: 0;
-    padding: 0;
-    color: #222;
-}
+        h2, h3, p {
+            margin: 0;
+            padding: 0;
+            color: $textColor;
+        }
 
-.team .caption h2 {
-    font-size: 20px;
-    margin-bottom: 5px;
-}
+        h2 {
+            font-size: 1.5*$fontSize;
+            margin-bottom: .5*$padding;
+        }
 
-.team .caption h3 {
-    font-size: 14px;
-    margin-bottom: 10px;
-}
+        h3 {
+            font-size: $fontSize;
+            margin-bottom: $padding;
+        }
 
-.team .caption p {
-    font-size: 13px;
-    -webkit-font-smoothing: antialiased;
-}
+        p {
+            color: $textColorLight;
+        }
+    }
 
-/*** Hover State ***/
+    &:hover {
+        border-color: $primaryColor;
+        @include transition(all .5s ease 0s);
 
-.team:hover .caption h2 {
-    color: #428bca;
-}
+        h2 {
+            color: $primaryColor;
+        }
 
-.team:hover figure img {
-    filter: none;
-    /* Firefox 3.5+ */
-    filter: none;
-    /* IE6+ */
-    filter: grayscale(0%);
-    /* Current draft standard */
-    -webkit-filter: grayscale(0%);
-    /* New WebKit */
-    -moz-filter: grayscale(0%);
-    -ms-filter: grayscale(0%);
-    -o-filter: grayscale(0%);
+        p {
+            color: $textColor;
+        }
 
-    -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    -o-transform: scale(1.2);
-    transform: scale(1.2);
+        figure {
+            border-color: $primaryColor;
+
+            img {
+                @include transform(scale(1.2));
+            }
+        }
+    }
 }
 
 /** Footer **/

@@ -49,72 +49,51 @@
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
 </head>
 <body>
 <!-- Le Navigation -->
-<nav id="pageNav">
+<nav id="pageNav" class="navbar navbar-toggleable-md">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-2 col-xs-4">
-                <a href="index.html"><img src="https://d2mdw063ttlqtq.cloudfront.net/files/44718252/fwpavatar.png" class="logo" alt="FWPolice" /></a>
-            </div>
-            <div class="col-sm-10 col-xs-8 text-right">
-                <ul class="mega-menu mega-menu-anim-scale response-to-switcher text-right">
-                    <!-- Switcher For Responsive Behavior -->
-                    <li class="switcher">
-                        <a href="#"><i class="fa fa-align-justify"></i> Menu</a>
-                    </li>
-                    <!-- Start Menu -->
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="premium.html">Premium</a>
-                    </li>
-                    <li class="right">
-                        <a href="#">Freebies</a>
-                        <div class="grid-3">
-                            <ul>
-                                <li><a href="freebies.html">Fireworks</a></li>
-                                <li><a href="freebies.html">Photoshop</a></li>
-                                <li><a href="freebies.html">Sketch</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="right">
-                        <a href="#">Tutorials</a>
-                        <div class="grid-3">
-                            <ul>
-                                <li><a href="tutorials.html">HTML &amp; CSS</a></li>
-                                <li><a href="tutorials.html">Fireworks</a></li>
-                                <li><a href="tutorials.html">Sketch</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="right">
-                        <a href="#">Support</a>
-                        <div class="grid-3">
-                            <ul>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="donate">Donate</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="search hidden-xs">
-                            <input type="text" id="topSearch" placeholder="Search our site...">
-                            <label for="topSearch"><i class="fa fa-search"></i></label>
-                        </span>
-                    </li>
-                </ul>
-            </div>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#containerNavbar" aria-controls="containerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"> </span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="https://d2mdw063ttlqtq.cloudfront.net/files/44718252/fwpavatar.png" class="logo" alt="FWPolice" /></a>
+
+        <div class="collapse navbar-collapse" id="containerNavbar">
+            <ul class="navbar-nav ml-auto justify-content-end">
+                <li class="nav-item active">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="blog.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown04">
+                        <a class="dropdown-item" href="blog.html">Blog</a>
+                        <a class="dropdown-item" href="blog-article.html">Blog Article</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-md-0">
+                <span class="search hidden-xs">
+                    <input type="text" id="topSearch" placeholder="Search our site...">
+                    <label for="topSearch"><i class="fa fa-search"></i></label>
+                </span>
+            </form>
         </div>
     </div>
 </nav>
 
 <header class="small">
-    <h1>About Us</h1>
+    <h1>Portfolio Single Item</h1>
 </header>
 
 <div class="sub-nav hidden-xs" id="pageSub">
@@ -136,12 +115,9 @@
     </div>
 </div>
 
-<section class="product-slider bg-white" style="padding-top: 130px; padding-bottom: 80px">
-</section>
-
 <!-- Section -->
-<section style="padding-top: 50px; padding-bottom: 50px">
-    <div class="container hero">
+<section class="leader">
+    <div class="container">
         <p>Simply.Me is a single-page style personal template designed to provide the user with a simple, elegant and up-to modern standard personal website. Built on Twitter Bootstrap, Simply.Me is loaded with all the framework’s features customized for this specific template. Simply.Me Version 2.0 comes loaded with new features. </p>
     </div>
 </section>
@@ -150,7 +126,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <img src="images/brand.jpg" class="img-responsive" alt="" />
+                <img src="images/flatfull.png" class="img-responsive" alt="" />
             </div>
             <div class="col-sm-6 padding-sm-top">
                 <h4 class="list-title animated bounceInRight">Custom Company Branding</h4>
@@ -170,7 +146,7 @@
                 <p>Simply.Me is a single-page style personal template designed to provide the user with a simple, elegant and up-to modern standard personal website. Built on Twitter Bootstrap, Simply.Me is loaded with all the framework’s features customized for this specific template. Simply.Me Version 2.0 comes loaded with new features and versions. Two major pre-built features of this new version is the ability to have a static and a slider header with the ability to control the height.</p>
             </div>
             <div class="col-sm-6 text-right">
-                <img src="http://beta.fwpolice.com/wp-content/uploads/2014/06/browserfeature_2.png" class="img-responsive" alt="" />
+                <img src="images/flatfull.png" class="img-responsive" alt="" />
             </div>
         </div>
     </div>
@@ -195,24 +171,22 @@
 <footer>
     <div class="container">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Premium</a></li>
-            <li><a href="#">Freebies</a></li>
-            <li><a href="#">Tutorials</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Donate</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
         </ul>
         <div class="text-center add-xs-top">
-            Copyright &copy; FWPolice. All Rights Reserved.
+            Copyright &copy; Miso Portfolio. All Rights Reserved.
         </div>
     </div>
 </footer>
 
 <!-- Le Javascript -->
-<script src="js/bootstrap.min.js"></script>
-<script src="js/library.js"></script>
-<script src="js/scripts.js"></script>
+<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+<script src="scripts/library.min.js"></script>
+<script src="scripts/main.js"></script>
+
 
 </body>
 </html>

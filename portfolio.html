@@ -49,99 +49,78 @@
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
 </head>
 <body>
 <!-- Le Navigation -->
-<nav id="pageNav">
+<nav id="pageNav" class="navbar navbar-toggleable-md">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-2 col-xs-4">
-                <a href="index.html"><img src="https://d2mdw063ttlqtq.cloudfront.net/files/44718252/fwpavatar.png" class="logo" alt="FWPolice" /></a>
-            </div>
-            <div class="col-sm-10 col-xs-8 text-right">
-                <ul class="mega-menu mega-menu-anim-scale response-to-switcher text-right">
-                    <!-- Switcher For Responsive Behavior -->
-                    <li class="switcher">
-                        <a href="#"><i class="fa fa-align-justify"></i> Menu</a>
-                    </li>
-                    <!-- Start Menu -->
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="premium.html">Premium</a>
-                    </li>
-                    <li class="right">
-                        <a href="#">Freebies</a>
-                        <div class="grid-3">
-                            <ul>
-                                <li><a href="freebies.html">Fireworks</a></li>
-                                <li><a href="freebies.html">Photoshop</a></li>
-                                <li><a href="freebies.html">Sketch</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="right">
-                        <a href="#">Tutorials</a>
-                        <div class="grid-3">
-                            <ul>
-                                <li><a href="tutorials.html">HTML &amp; CSS</a></li>
-                                <li><a href="tutorials.html">Fireworks</a></li>
-                                <li><a href="tutorials.html">Sketch</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="right">
-                        <a href="#">Support</a>
-                        <div class="grid-3">
-                            <ul>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="donate">Donate</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="search hidden-xs">
-                            <input type="text" id="topSearch" placeholder="Search our site...">
-                            <label for="topSearch"><i class="fa fa-search"></i></label>
-                        </span>
-                    </li>
-                </ul>
-            </div>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#containerNavbar" aria-controls="containerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"> </span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="https://d2mdw063ttlqtq.cloudfront.net/files/44718252/fwpavatar.png" class="logo" alt="FWPolice" /></a>
+
+        <div class="collapse navbar-collapse" id="containerNavbar">
+            <ul class="navbar-nav ml-auto justify-content-end">
+                <li class="nav-item active">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="blog.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown04">
+                        <a class="dropdown-item" href="blog.html">Blog</a>
+                        <a class="dropdown-item" href="blog-article.html">Blog Article</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-md-0">
+                <span class="search hidden-xs">
+                    <input type="text" id="topSearch" placeholder="Search our site...">
+                    <label for="topSearch"><i class="fa fa-search"></i></label>
+                </span>
+            </form>
         </div>
     </div>
 </nav>
 
 <header class="small">
-    <h1>Fireworks Resources</h1>
+    <h1>Portfolio</h1>
 </header>
 
 <div class="sub-nav hidden-xs" id="pageSub">
     <div class="container">
         <ul class="row">
             <li class="col-sm-3">
-                <a href="#">Fireworks</a>
+                <a href="#" class="twitter"><i class="fa fa-twitter"></i> Twitter</a>
             </li>
             <li class="col-sm-3">
-                <a href="#">Photoshop</a>
+                <a href="#" class="facebook"><i class="fa fa-facebook"></i> Facebook</a>
             </li>
             <li class="col-sm-3">
-                <a href="#">Sketch</a>
+                <a href="#" class="google-plus"><i class="fa fa-google-plus"></i> Google+</a>
             </li>
             <li class="col-sm-3">
-                <a href="#">HTML &amp; CSS</a>
+                <a href="#" class="dribbble"><i class="fa fa-dribbble"></i> Dribbble</a>
             </li>
         </ul>
     </div>
 </div>
 
-<!-- Section -->
-<section style="padding-top: 130px; padding-bottom: 80px">
+<!-- Recent Items -->
+<section class="mt-5">
     <div class="container">
-        <div class="row portfolio add-lg-top">
+        <div class="row portfolio">
             <div class="col-sm-4">
-                <a href="product.html" class="item">
+                <a href="portfolio-single.html" class="item">
                     <figure>
                         <img src="images/portfolio/book.jpg" alt=""/>
                         <figcaption>
@@ -155,7 +134,7 @@
                 </a>
             </div>
             <div class="col-sm-4">
-                <a href="product.html" class="item">
+                <a href="portfolio-single.html" class="item">
                     <figure>
                         <img src="images/portfolio/cards.jpg" alt=""/>
                         <figcaption>
@@ -169,7 +148,7 @@
                 </a>
             </div>
             <div class="col-sm-4">
-                <a href="product.html" class="item">
+                <a href="portfolio-single.html" class="item">
                     <figure>
                         <img src="images/portfolio/logo.jpg" alt=""/>
                         <figcaption>
@@ -183,7 +162,7 @@
                 </a>
             </div>
             <div class="col-sm-4">
-                <a href="product.html" class="item">
+                <a href="portfolio-single.html" class="item">
                     <figure>
                         <img src="images/portfolio/mockup.jpg" alt=""/>
                         <figcaption>
@@ -196,7 +175,7 @@
                     </div>
                 </a>
             </div><div class="col-sm-4">
-                <a href="product.html" class="item">
+                <a href="portfolio-single.html" class="item">
                     <figure>
                         <img src="images/portfolio/cards2.jpg" alt=""/>
                         <figcaption>
@@ -210,7 +189,7 @@
                 </a>
             </div>
             <div class="col-sm-4">
-                <a href="product.html" class="item">
+                <a href="portfolio-single.html" class="item">
                     <figure>
                         <img src="images/portfolio/app.jpg" alt=""/>
                         <figcaption>
@@ -222,23 +201,22 @@
                         <p>By: Jessica Pearson</p>
                     </div>
                 </a>
-            </div>
-            <div class="col-sm-4">
-                <a href="product.html" class="item">
+            </div><div class="col-sm-4">
+                <a href="portfolio-single.html" class="item">
                     <figure>
-                        <img src="images/portfolio/mockup2.jpg" alt=""/>
+                        <img src="images/portfolio/book.jpg" alt=""/>
                         <figcaption>
                             <i class="fa fa-search"></i>
                         </figcaption>
                     </figure>
                     <div class="caption">
-                        <h2>Make the Leap</h2>
-                        <p>By: Harold Gunderson</p>
+                        <h2>Hand Drawn Fonts</h2>
+                        <p>By: Mike Ross</p>
                     </div>
                 </a>
             </div>
             <div class="col-sm-4">
-                <a href="product.html" class="item">
+                <a href="portfolio-single.html" class="item">
                     <figure>
                         <img src="images/portfolio/cards.jpg" alt=""/>
                         <figcaption>
@@ -246,13 +224,13 @@
                         </figcaption>
                     </figure>
                     <div class="caption">
-                        <h2>Make the Leap</h2>
-                        <p>By: Daniel Hardman</p>
+                        <h2>Business Cards Vol 1</h2>
+                        <p>By: Rachael Zane</p>
                     </div>
                 </a>
             </div>
             <div class="col-sm-4">
-                <a href="product.html" class="item">
+                <a href="portfolio-single.html" class="item">
                     <figure>
                         <img src="images/portfolio/logo.jpg" alt=""/>
                         <figcaption>
@@ -261,40 +239,47 @@
                     </figure>
                     <div class="caption">
                         <h2>Make the Leap</h2>
-                        <p>By: Katrina Bennett</p>
+                        <p>By: Harvey Specter</p>
                     </div>
                 </a>
-            </div>
-        </div>
-
-        <div class="text-center">
-            <div class="btn-group">
-                <button type="button" class="btn btn-default" disabled>Previous</button>
-                <button type="button" class="btn btn-default">1</button>
-                <button type="button" class="btn btn-default">2</button>
-                <button type="button" class="btn btn-default">3</button>
-                <button type="button" class="btn btn-default">4</button>
-                <button type="button" class="btn btn-default">Next</button>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Meta -->
-<section class="home-service add-padding">
+<!-- Friends -->
+<section class="clients bg-white">
     <div class="container">
         <div class="row">
-            <div class="col-sm-4">
-                <h3>Some Heading</h3>
-                <p>We take pride in creating high quality products for our clients. A creative thinker from the city that never sleeps, New York City. An influencial and passionate person in the Adobe Fireworks community working to bring it success. Lover of music of all genre, language, tempo and age.</p>
+            <div class="col-sm-2">
+                <a href="#">
+                    <img src="images/logo/creativemarket.png" alt="">
+                </a>
             </div>
-            <div class="col-sm-4">
-                <h3>Some Heading</h3>
-                <p>We take pride in creating high quality products for our clients. A creative thinker from the city that never sleeps, New York City. An influencial and passionate person in the Adobe Fireworks community working to bring it success. Lover of music of all genre, language, tempo and age.</p>
+            <div class="col-sm-2">
+                <a href="#">
+                    <img src="images/logo/codecanyon.png" alt="">
+                </a>
             </div>
-            <div class="col-sm-4">
-                <h3>Some Heading</h3>
-                <p>We take pride in creating high quality products for our clients. A creative thinker from the city that never sleeps, New York City. An influencial and passionate person in the Adobe Fireworks community working to bring it success. Lover of music of all genre, language, tempo and age.</p>
+            <div class="col-sm-2">
+                <a href="#">
+                    <img src="images/logo/themebeans.png" alt="">
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="#">
+                    <img src="images/logo/webbdna.png" alt="">
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="#">
+                    <img src="images/logo/fleech.png" alt="">
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="#">
+                    <img src="images/logo/fwpolice.png" alt="">
+                </a>
             </div>
         </div>
     </div>
@@ -304,23 +289,22 @@
 <footer>
     <div class="container">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Premium</a></li>
-            <li><a href="#">Freebies</a></li>
-            <li><a href="#">Tutorials</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Donate</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
         </ul>
         <div class="text-center add-xs-top">
-            Copyright &copy; FWPolice. All Rights Reserved.
+            Copyright &copy; Miso Portfolio. All Rights Reserved.
         </div>
     </div>
 </footer>
 
 <!-- Le Javascript -->
-<script src="js/bootstrap.min.js"></script>
-<script src="js/scripts.js"></script>
+<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+<script src="scripts/library.min.js"></script>
+<script src="scripts/main.js"></script>
+
 
 </body>
 </html>
