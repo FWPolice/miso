@@ -220,12 +220,7 @@ figure {
     height: 1px;
     width: 143px;
     margin: 2*$padding auto $padding;
-    background: -moz-linear-gradient(left,rgba(0,0,0,0) 13%,rgba(0,0,0,0.3) 50%,rgba(0,0,0,0) 87%);
-    background: -webkit-gradient(linear,left top,right top,color-stop(13%,rgba(0,0,0,0)),color-stop(50%,rgba(0,0,0,0.3)),color-stop(87%,rgba(0,0,0,0)));
-    background: -webkit-linear-gradient(left,rgba(0,0,0,0) 13%,rgba(0,0,0,0.3) 50%,rgba(0,0,0,0) 87%);
-    background: -o-linear-gradient(left,rgba(0,0,0,0) 13%,rgba(0,0,0,0.3) 50%,rgba(0,0,0,0) 87%);
-    background: -ms-linear-gradient(left,rgba(0,0,0,0) 13%,rgba(0,0,0,0.3) 50%,rgba(0,0,0,0) 87%);
-    background: linear-gradient(to right,rgba(0,0,0,0) 13%,rgba(0,0,0,0.3) 50%,rgba(0,0,0,0) 87%);
+    @include linear-gradient(to right,rgba(0,0,0,0) 13%,rgba(0,0,0,0.3) 50%,rgba(0,0,0,0) 87%);
 }
 
 /** Forms **/
@@ -384,6 +379,7 @@ nav {
     color: #fff;
     width: 100%;
     z-index: 998;
+    @include transition (all 0.2s ease-in-out);
 
     ul {
         margin: 0;
@@ -443,7 +439,7 @@ nav {
 
     &.affix {
         position: fixed;
-        top: 50px;
+        top: $navSizeMobile;
         width: 100%;
         display: block;
         @include transition (all 0.2s ease-in-out);
@@ -455,31 +451,27 @@ nav {
     }
 }
 
-
-
-
-
-
-
 /** Header **/
 
 header {
     display: block;
     height: 700px;
     margin-top: -$navSize;
-    background: url('../images/misocover.jpg') no-repeat fixed center bottom;
+    background: url('../images/misocover.jpg') no-repeat center bottom;
     background-size: cover;
 
     &.small {
         display: block;
-        height: 200px;
-        margin-top: -$navSize;
-        padding-top: 100px;
+        height: 200px + $navSize;
+        //margin-top: -$navSize;
+        padding-top: 100px + $navSize;
         text-align: center;
         background: #fff url('../images/bg/post.jpg') fixed center top;
 
         h1 {
-            font-size: 50px;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+            font-style: italic;
+            letter-spacing: 0.0125em;
         }
     }
 }
@@ -740,9 +732,6 @@ header {
                 			top: 0;
                 			left: 0;
                 			z-index: 4;
-                            padding: 0 1.5*$padding;
-                            background: $overlayColor;
-                            @include transition(0.5s ease-in-out background);
                 		}
 
                 		&.next {
@@ -752,6 +741,12 @@ header {
                 		&.prev {
                 			display: block;
                 		}
+
+                        p {
+                            background: $overlayColor;
+                            padding: .75*$padding 1.5*$padding;
+                            //border: 1px solid white;
+                        }
 
                 		> img {
                 			display: block;
@@ -804,6 +799,8 @@ section {
     .sub-title {
         font-size: 1.5*$fontSize;
         font-weight: $fontLight;
+        max-width: 700px;
+        margin: 0 auto;
     }
 }
 
@@ -815,37 +812,53 @@ section {
     }
 }
 
+.leader {
+    padding: 10*$padding 0 5*$padding;
+    font-size: 1.5*$fontSize;
+    letter-spacing: 0.0125em;
+
+    p {
+        font-size: 1.5*$fontSize;
+        font-weight: $fontLight;
+    }
+}
+
 /** Service Style **/
 .services {
+    .item {
+        position: relative;
+        margin-top: $padding;
+        margin-bottom: $padding;
+
+        h4 {
+            font-size: 1.35*$fontSize;
+            font-style: italic;
+            position: relative;
+            margin-bottom: 1.25*$padding;
+
+            i {
+                display: inline-block;
+                color: $textColorLight;
+                font-size: 2*$fontSize;
+                position: absolute;
+                left: 0;
+                top: -4px;
+            }
+        }
+
+        p {
+            line-height: 180%;
+            color: $textColorLight;
+            margin: 0;
+        }
+    }
+
     &.style-1 {
-        background: white;
         cursor: default;
 
         .item {
-            margin-top: $padding;
-            margin-bottom: $padding;
-
             h4 {
-                font-size: 1.35*$fontSize;
-                font-style: italic;
-                position: relative;
                 padding-left: 3.25*$padding;
-                margin-bottom: 1.25*$padding;
-
-                i {
-                    display: inline-block;
-                    color: $textColorLight;
-                    font-size: 2*$fontSize;
-                    position: absolute;
-                    left: 0;
-                    top: -4px;
-                }
-            }
-
-            p {
-                line-height: 180%;
-                color: $textColorLight;
-                margin: 0;
             }
 
             &:hover {
@@ -861,6 +874,27 @@ section {
                 p {
                     color: $textColor;
                 }
+            }
+        }
+    }
+
+    &.style-2 {
+        cursor: default;
+
+        .item {
+            .icon {
+                position: absolute;
+                left: $padding;
+                top: -.35*$padding;
+
+                i {
+                    font-size: 2*$fontSize;
+                    color: $primaryColor;
+                }
+            }
+
+            .text {
+                padding-left: 3.25*$padding;
             }
         }
     }
@@ -1053,6 +1087,160 @@ section {
 			height: inherit;
 		}
 	}
+}
+
+/** Skill Bars **/
+
+.skillbar{
+	position:relative;
+	display:inline-block;
+	margin-bottom: 2*$padding;
+	width:100%;
+	top: -5px;
+	@include transition(width, background-color);
+
+    .skillbar-title{
+    	position:relative;
+    	left: 0;
+    	width: auto;
+    	font-weight: $fontNormal;
+    	font-size: $fontSize;
+        letter-spacing: 1px;
+    	display: inline-block;
+
+        span {
+        	display:block;
+        }
+    }
+
+    .skillbar-bar {
+    	height: .5*$padding;
+    	width: 100%;
+    	margin-top: .33*$padding;
+    	position: relative;
+    	float: left;
+    	overflow: visible;
+    }
+
+    .skill-bar-percent{
+    	position: relative;
+    	height: .75*$padding;
+    	font-size: $fontSizeSmall;
+    	line-height: 2*$padding;
+    	color: white;
+    	float: left;
+    	font-weight: $fontBold;
+    	background: $headerColor;
+    	width: 0%;
+    }
+
+    .pointerval{
+    	position: absolute;
+    	top: -2*$padding;
+    	margin-left: -$padding;
+
+        .value{
+        	background: $headerColor;
+        	padding: 0 .25*$padding;
+        	z-index: 99;
+        	font-size: $fontSizeSmall;
+        	line-height: 1.5*$padding;
+        	color: white;
+        	float: left;
+        	font-weight: $fontBold;
+        	@include border-radius(3px);
+        }
+
+        .pointer{
+        	width: 0px;
+        	height: 0px;
+        	border-style: solid;
+        	border-width: 5px 4px 0 4px;
+        	border-color: $headerColor transparent transparent transparent;
+        	position: absolute;
+        	bottom: -5px;
+        	left: 42%;
+        	left: calc(50% - 5px);
+        }
+    }
+}
+
+/** Team **/
+
+.team {
+    margin-bottom: 30px;
+}
+
+.team figure {
+    display: block;
+    height: 180px;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+    .team figure img {
+        display: block;
+        width: 100%;
+
+        -webkit-transition: all .5s ease 0s;
+        -moz-transition: all .5s ease 0s;
+        -ms-transition: all .5s ease 0s;
+        -o-transition: all .5s ease 0s;
+        transition: all .5s ease 0s;
+    }
+
+.team .caption {
+    padding: 15px 0;
+}
+
+.team .caption h2,
+.team .caption h3,
+.team .caption p {
+    margin: 0;
+    padding: 0;
+    color: #222;
+}
+
+.team .caption h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.team .caption h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.team .caption p {
+    font-size: 13px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*** Hover State ***/
+
+.team:hover .caption h2 {
+    color: #428bca;
+}
+
+.team:hover figure img {
+    filter: none;
+    /* Firefox 3.5+ */
+    filter: none;
+    /* IE6+ */
+    filter: grayscale(0%);
+    /* Current draft standard */
+    -webkit-filter: grayscale(0%);
+    /* New WebKit */
+    -moz-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 /** Footer **/

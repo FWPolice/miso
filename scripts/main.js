@@ -139,7 +139,7 @@ scrollFade($('#hero-unit .hero-content')
 
        $('#pageSub').affix({
            offset: {
-               top: 140
+               top: 150
            }
        });
 
