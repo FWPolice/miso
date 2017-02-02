@@ -1,27 +1,4 @@
 /* ==========================================================================
-   Affix Menu
-   ==========================================================================
-
-var menu = document.querySelector('#homeNav');
-var menuPosition = menu.getBoundingClientRect();
-var placeholder = document.createElement('div');
-placeholder.style.width = menuPosition.width + 'px';
-placeholder.style.height = menuPosition.height + 'px';
-var isAdded = false;
-
-window.addEventListener('scroll', function() {
-    if (window.pageYOffset >= menuPosition.top && !isAdded) {
-        menu.classList.add('affix');
-        menu.parentNode.insertBefore(placeholder, menu);
-        isAdded = true;
-    } else if (window.pageYOffset < menuPosition.top && isAdded) {
-        menu.classList.remove('affix');
-        menu.parentNode.removeChild(placeholder);
-        isAdded = false;
-    }
-});*/
-
-/* ==========================================================================
    Animated Skillbars
    ========================================================================== */
 
@@ -156,13 +133,3 @@ scrollFade($('#hero-unit .hero-content')
        });
     })
 } (window.jQuery)
-
-/*$(window).load(function() {
-    $('.blog .post').hover(function() {
-        $(this).find('.description').stop().animate({
-            height: "toggle",
-            opacity: "toggle"
-        }, 300);
-    });
-});
-*/

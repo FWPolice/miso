@@ -96,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1em;
     margin: 0 0 $padding;
 	color: $headerColor;
-    -webkit-font-smoothing: antialiased;
+    @include font-smoothing(on);
 
     a {
         color: inherit;
@@ -164,6 +164,20 @@ figure {
     }
 }
 
+blockquote {
+    background: $bodyColor;
+    padding: $padding 2*$padding;
+    border-left: 3px solid $primaryColor;
+    font-size: 1.5*$fontSize;
+}
+
+pre {
+    background: $bodyColor;
+    padding: $padding 2*$padding;
+    border-left: 3px solid $borderColor;
+    font-size: $fontSize;
+}
+
 /** Class Helpers **/
 
 .display-none {
@@ -192,28 +206,29 @@ figure {
 
 .button {
     text-transform: uppercase;
-    padding: 8px 18px;
-    border: 2px solid #2da5da;
-    color: #2da5da;
-    border-radius: 4px;
+    padding: .5*$padding $padding;
+    border: none;
+    color: $white;
+    background: $primaryColor;
     display: inline-block;
-    font-size: 13px;
-    font-weight: 500;
-    margin-top: 10px;
-    line-height: normal;
+    font-size: $fontSize;
+    font-weight: $fontNormal;
+    margin-top: $padding;
+    line-height: $lineHeight;
     letter-spacing: 1px;
+    cursor: pointer;
+    @include border-radius(4px);
     @include transition(all 200ms ease-in);
 
     i {
         display: inline-block;
         width: 25px;
         text-align: left;
-        font-size: 14px;
     }
 
     &:hover {
-        background: #2da5da;
-        color: #FFF;
+        background: lighten($primaryColor, 10%);
+        color: $white;
         @include transition(all 200ms ease-in);
     }
 }
@@ -263,7 +278,7 @@ nav {
     background-color: rgba(255,255,255,0.35);
     font-size: $fontSize;
     @include box-shadow(0 2px 2px -2px rgba(0, 0, 0, .4));
-    -webkit-font-smoothing: antialiased;
+    @include font-smoothing(on);
     @include transition(all 0.3s ease-in-out);
 
     .logo {
@@ -319,6 +334,11 @@ nav {
 
                     a {
                         line-height: $logoSize;
+
+                        &.active {
+                            color: $primaryColor;
+                            background: $bodyColor;
+                        }
                     }
 
                     &:before {
@@ -418,7 +438,7 @@ nav {
             color: #fff;
             text-decoration: none;
             cursor: pointer;
-            -webkit-font-smoothing: antialiased;
+            @include font-smoothing(on);
             @include transition (all 0.2s ease-in-out);
 
             &:hover {
@@ -1254,6 +1274,8 @@ section {
 /** Blog **/
 
 .blog {
+    padding-top: 8*$padding;
+
     .post {
         display: block;
         position: relative;
@@ -1372,6 +1394,170 @@ section {
                 .title {
                     color: $redColor;
                     text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+                }
+            }
+        }
+    }
+}
+
+/** Blog Single **/
+
+.blog-single {
+    header h1 {
+        margin-bottom: 0.5*$padding;
+    }
+
+    .meta {
+        font-size: $fontSize;
+        background: $overlayColor;
+        display: inline-block;
+
+        span {
+            display: inline-block;
+            padding: 0 $padding;
+            font-weight: $fontBold;
+        }
+    }
+
+    .featured-image {
+        padding: (2*$padding + $subHeaderSize) $padding $padding;
+
+        figure {
+            max-height:  400px;
+            overflow: hidden;
+            margin-bottom: 0;
+            padding: 0;
+
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+
+    article {
+        font-size: 1.5*$fontSize;
+
+        p {
+            font-size: 1.25*$fontSize;
+        }
+    }
+
+    .comments {
+        .comment-form {
+            background: $white;
+            padding: $padding 2*$padding;
+            border: 1px solid $borderColor;
+        }
+
+        .comment {
+            position: relative;
+            padding-left: $navSize + $padding;
+            margin-bottom: 3*$padding;
+            font-size: 1.5*$fontSize;
+
+            p {
+                font-size: 1.25*$fontSize;
+            }
+
+            .photo {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: $navSize;
+                height: $navSize;
+                overflow: hidden;
+                max-width: 100%;
+                border: 1px solid $frameColor;
+                padding: 0.25rem;
+                @include border-radius(50%);
+
+                img {
+                    max-width: 100%;
+                    @include border-radius(50%);
+                }
+            }
+
+            .author {
+                position: relative;
+
+                .date {
+                    display: inline-block;
+                    float: right;
+                    font-style: italic;
+                    font-size: 80%;
+                    padding-top: 0.45rem;
+                    color: lighten($textColor, 15%);
+                }
+
+                a.reply {
+                    color: lighten($textColor, 15%);
+                    border: none;
+                    font-weight: $fontNormal;
+
+                    &:hover {
+                        border-bottom: 1px solid $borderColor;
+                        color: $primaryColor;
+                    }
+                }
+            }
+
+            &.reply {
+                margin-left: 4rem;
+            }
+        }
+
+        .add-comment {
+            margin: 2*$padding 0 2*$padding;
+        }
+    }
+}
+
+// Forms
+form {
+    .form-group {
+        position: relative;
+        background: transparent;
+
+        label {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 5*$padding;
+            padding: .75*$padding 0 0;
+            font-weight: $fontNormal;
+            color: lighten($textColor, 20%);
+        }
+
+        input, textarea {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid $borderColor;
+            outline: none;
+            padding-left: 6*$padding;
+            background: transparent;
+            line-height: 3*$padding;
+
+            &:focus {
+                border-color: $primaryColor;
+
+                ~ label {
+                    color: $primaryColor;
+                }
+            }
+
+            &:valid {
+                border-color: $greenAlert;
+
+                ~ label {
+                    color: $greenAlert;
+                }
+            }
+
+            &:invalid:not(:focus):not(:placeholder-shown) {
+                border-color: $redAlert;
+
+                ~ label {
+                    color: $redAlert;
                 }
             }
         }
