@@ -404,6 +404,34 @@ nav {
             }
         }
     }
+
+    .navbar-toggler {
+        padding-top: 10px;
+
+        .navbar-toggler-icon {
+            outline: none;
+            @include hamburger(25px, 2px, 5px, $textColor);
+
+            &:focus, &:active {
+                -webkit-outline: none;
+                outline: none;
+                @include box-shadow(none);
+            }
+        }
+    }
+
+    @media screen and (max-width: $grid-sm){
+        padding: 0;
+        margin: 0;
+
+        .container {
+            width: 100%;
+
+            .navbar-collapse {
+                background: white;
+            }
+        }
+    }
 }
 
 /*** Sub-Nav ***/
@@ -484,6 +512,10 @@ nav {
             line-height: $subHeaderSize;
             @include transition (all 0.2s ease-in-out);
         }
+    }
+
+    @media screen and (max-width: $grid-sm){
+        display: none;
     }
 }
 

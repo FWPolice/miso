@@ -151,6 +151,20 @@
     transform: translateY(-50%);
 }
 
+// Hamburger
+@mixin hamburger($width, $bar-height, $space, $color) {
+  display: block;
+  width: $width;
+  height: (($bar-height * 3) + ($space * 2));
+  background: linear-gradient(
+            to bottom,
+            $color 0, $color $bar-height,
+            transparent $bar-height, transparent ($bar-height + $space),
+            $color ($bar-height + $space), $color (($bar-height * 2) + $space),
+            transparent (($bar-height * 2) + $space),transparent (($bar-height * 2) + ($space * 2)),
+            $color (($bar-height * 2) + ($space * 2)), $color (($bar-height * 3) + ($space * 2)));
+}
+
 // Angle machine
 @function pow($number, $exp) {
     $value: 1;
