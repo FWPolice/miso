@@ -49,66 +49,45 @@
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
 </head>
 <body>
 <!-- Le Navigation -->
-<nav id="pageNav">
+<nav id="pageNav" class="navbar navbar-toggleable-md">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-2 col-xs-4">
-                <a href="index.html"><img src="https://d2mdw063ttlqtq.cloudfront.net/files/44718252/fwpavatar.png" class="logo" alt="FWPolice" /></a>
-            </div>
-            <div class="col-sm-10 col-xs-8 text-right">
-                <ul class="mega-menu mega-menu-anim-scale response-to-switcher text-right">
-                    <!-- Switcher For Responsive Behavior -->
-                    <li class="switcher">
-                        <a href="#"><i class="fa fa-align-justify"></i> Menu</a>
-                    </li>
-                    <!-- Start Menu -->
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="premium.html">Premium</a>
-                    </li>
-                    <li class="right">
-                        <a href="#">Freebies</a>
-                        <div class="grid-3">
-                            <ul>
-                                <li><a href="freebies.html">Fireworks</a></li>
-                                <li><a href="freebies.html">Photoshop</a></li>
-                                <li><a href="freebies.html">Sketch</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="right">
-                        <a href="#">Tutorials</a>
-                        <div class="grid-3">
-                            <ul>
-                                <li><a href="tutorials.html">HTML &amp; CSS</a></li>
-                                <li><a href="tutorials.html">Fireworks</a></li>
-                                <li><a href="tutorials.html">Sketch</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="right">
-                        <a href="#">Support</a>
-                        <div class="grid-3">
-                            <ul>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="donate">Donate</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="search hidden-xs">
-                            <input type="text" id="topSearch" placeholder="Search our site...">
-                            <label for="topSearch"><i class="fa fa-search"></i></label>
-                        </span>
-                    </li>
-                </ul>
-            </div>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#containerNavbar" aria-controls="containerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"> </span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="https://d2mdw063ttlqtq.cloudfront.net/files/44718252/fwpavatar.png" class="logo" alt="FWPolice" /></a>
+
+        <div class="collapse navbar-collapse" id="containerNavbar">
+            <ul class="navbar-nav ml-auto justify-content-end">
+                <li class="nav-item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="blog.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown04">
+                        <a class="dropdown-item active" href="blog.html">Blog</a>
+                        <a class="dropdown-item" href="blog-article.html">Blog Article</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-md-0">
+                <span class="search hidden-xs">
+                    <input type="text" id="topSearch" placeholder="Search our site...">
+                    <label for="topSearch"><i class="fa fa-search"></i></label>
+                </span>
+            </form>
         </div>
     </div>
 </nav>
@@ -137,8 +116,8 @@
 </div>
 
 <!-- Section -->
-<section style="padding-top: 130px; padding-bottom: 80px">
-    <div class="container hero">
+<section class="leader">
+    <div class="container">
         <p>Have any ideas or work you would like to share? We'd love to hear from you. Drop us your suggestions,
             comments and concerns by filling out the form below. Please keep in mind that while we do review all
             emails that come in, we are not able to respond to all of them because of the large volume of emails
@@ -147,40 +126,36 @@
 </section>
 
 <!-- Section -->
-<section class="home-service add-padding">
+<section class="contact bg-white">
     <div class="container">
         <form class="contact">
             <div class="row">
                 <div class="col-sm-4">
-                    <label class="required">
-                        Your Name
+                    <div class="form-group">
                         <input type="text" name="name" id="name" placeholder="John Stuart" required="">
-                    </label>
+                        <label>Your Name</label>
+                    </div>
                 </div>
                 <div class="col-sm-4">
-                    <label class="required">
-                        Your Email
+                    <div class="form-group">
                         <input type="email" name="email" id="email" placeholder="John@Stuart.com" required="">
-                    </label>
+                        <label>Your Name</label>
+                    </div>
                 </div>
                 <div class="col-sm-4">
-                    <label class="required">
-                        Subject
+                    <div class="form-group">
                         <input type="text" name="subject" id="subject" placeholder="Inquire about a project" required="">
-                    </label>
+                        <label>Your Name</label>
+                    </div>
                 </div>
-            </div>
-            <label class="required">
-                Message
-                <textarea rows="7" placeholder="I have an idea for a project..." required=""></textarea>
-            </label>
-            <div class="row add-sm-top">
-                <div class="col-sm-5">
-                    <!--<button class="button add-sm-right" type="reset"><i class="fa fa-times"></i> &nbsp; RESET</button>-->
-                    <button class="button" type="submit"><i class="fa fa-envelope"></i>SEND E-MAIL</button>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <textarea rows="7" placeholder="I have an idea for a project..." required=""></textarea>
+                        <label>Your Name</label>
+                    </div>
                 </div>
-                <div class="col-sm-7 legend">
-
+                <div class="col-sm-12 text-center">
+                    <button class="button" type="submit"><i class="fa fa-envelope-o"></i>SEND E-MAIL</button>
                 </div>
             </div>
         </form>
@@ -191,24 +166,22 @@
 <footer>
     <div class="container">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Premium</a></li>
-            <li><a href="#">Freebies</a></li>
-            <li><a href="#">Tutorials</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Donate</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
         </ul>
         <div class="text-center add-xs-top">
-            Copyright &copy; FWPolice. All Rights Reserved.
+            Copyright &copy; Miso Portfolio. All Rights Reserved.
         </div>
     </div>
 </footer>
 
 <!-- Le Javascript -->
-<script src="js/bootstrap.min.js"></script>
-<script src="js/library.js"></script>
-<script src="js/scripts.js"></script>
+<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+<script src="scripts/library.min.js"></script>
+<script src="scripts/main.js"></script>
+
 
 </body>
 </html>
