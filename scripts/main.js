@@ -156,3 +156,13 @@ scrollFade($('#hero-unit .hero-content')
        });
     })
 } (window.jQuery)
+
+/*$(window).load(function() {
+    $('.blog .post').hover(function() {
+        $(this).find('.description').stop().animate({
+            height: "toggle",
+            opacity: "toggle"
+        }, 300);
+    });
+});
+*/

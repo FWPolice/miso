@@ -1251,6 +1251,133 @@ section {
     }
 }
 
+/** Blog **/
+
+.blog {
+    .post {
+        display: block;
+        position: relative;
+        background: #fff;
+        height: 470px;
+        overflow: hidden;
+        margin: $padding 0;
+        @include box-shadow(0px 1px 2px 0px rgba(0, 0, 0, 0.15));
+        @include transition(all 0.3s ease);
+
+        .post-img{
+            height: 400px;
+            overflow: hidden;
+
+            img {
+                height: 400px;
+                min-width: 100%;
+                @include transition(all 0.5s ease);
+            }
+
+            .date {
+                position: absolute;
+                top: $padding;
+                right: $padding;
+                z-index: 1;
+                background: $redColor;
+                width: $navSizeMobile;
+                height: $navSizeMobile;
+                color: $white;
+                text-align: center;
+                padding: .45*$padding 0;
+                line-height: 1.2;
+                @include border-radius(100%);
+                @include transition(all 0.3s ease);
+
+                .month {
+                    font-weight: $fontBold;
+                }
+            }
+        }
+
+        .post-content {
+            position: absolute;
+            bottom: 0;
+            background: $white;
+            width: 100%;
+            padding: $padding;
+
+            .category {
+                position: absolute;
+                top: -2.45*$padding;
+                left: 0;
+                background: $redColor;
+                padding: 0 $padding;
+                line-height: 2.5*$padding;
+                color: white;
+                text-transform: uppercase;
+            }
+
+            .title {
+                margin-bottom: .75*$padding;
+                font-size: 1.75em;
+                text-shadow: none;
+            }
+
+            .sub-title {
+                font-style: normal;
+                padding-bottom: $padding;
+            }
+
+            .description {
+                height: 0;
+                overflow: hidden;
+                @include transition(all 0.3s ease);
+            }
+
+            .post-meta {
+                display: block;
+                background: $white;
+
+                .timestamp {
+                    display: inline-block;
+                    margin-right: $padding;
+                }
+
+                .comments a {
+                    font-weight: $fontNormal;
+                }
+            }
+        }
+
+        &:hover, .hover {
+            @include box-shadow(0px 1px 35px 0px rgba(0, 0, 0, 0.3));
+            @include transition(all 0.3s ease);
+
+            .post-img {
+                .date {
+                    background: $white;
+                    color: $redColor;
+                    @include transition(all 0.3s ease);
+                }
+
+                img {
+                    @include transform(scale(1.1));
+                    @include opacity(60);
+                    @include transition(all 0.5s ease);
+                }
+            }
+
+            .post-content {
+                .description {
+                    height: 130px;
+                    @include transition(all 0.3s ease);
+                }
+
+                .title {
+                    color: $redColor;
+                    text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+                }
+            }
+        }
+    }
+}
+
 /** Footer **/
 
 footer {
